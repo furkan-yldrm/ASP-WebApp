@@ -5,7 +5,7 @@
 
 <br />
 <h2>Çalışan Listesi</h2>
-<a class='btn btn-primary btn-sm' href='/Employees/Create'>Çalışan Ekle</a>
+<a class='btn btn-primary btn-sm' href='/Employees/Create' name="CalisanEkle">Çalışan Ekle</a>
 
 <table class="table">
     <thead>
@@ -15,19 +15,22 @@
             <th>Maas</th>
             <th>Mesai</th>
             <th>Derece</th>
+            <th>İşlemler</th>
         </tr>
     </thead>
     <tbody>
         @foreach(var item in Model.Employees)
         {
             <tr>
-                <td>item.id</td>
-                <td>item.name</td>
-                <td>item.maas</td>
-                <td>item.mesai</td>
-                <td>item.derece</td>
-                <td class='btn btn-primary btn-sm' href="/Employees/Edit?id=@item.id">Edit</td>
-                <td class='btn btn-primary btn-sm' href="/Employees/Delete?id=@item.id">Delete</td>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.maas</td>
+                <td>@item.mesai</td>
+                <td>@item.derece</td> 
+                <td>
+                <a class='btn btn-primary btn-sm' href="/Employees/Edit?id=@item.id" name="Edit">Edit</a>
+                <a class='btn btn-danger btn-sm' href="/Employees/Delete?id=@item.id" name="Delete">Delete</a>
+                </td>
             </tr>
         }
     </tbody>
