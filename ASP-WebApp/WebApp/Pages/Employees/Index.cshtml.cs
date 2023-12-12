@@ -27,9 +27,9 @@ namespace WebApp.Pages.Employees
                                 EmployeeInfo info = new EmployeeInfo();
                                 info.id = reader.GetInt32(0);
                                 info.name = reader.GetString(1);
-                                info.maas = reader.GetInt32(2);
-                                info.mesai = reader.GetInt32(3);
-                                info.derece = reader.GetInt32(4);
+                                info.maas = reader.GetString(2);
+                                info.mesai = reader.GetString(3);
+                                info.derece = reader.GetString(4);
 
                                 Employees.Add(info);
                             }
@@ -47,10 +47,10 @@ namespace WebApp.Pages.Employees
         public class EmployeeInfo 
         {
             public int id;
-            public string name;
-            public int maas;
-            public int mesai;
-            public int derece;
+            public String name;
+            public String maas;
+            public String mesai;
+            public String derece;
         }
 
     }
